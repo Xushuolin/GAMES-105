@@ -1,0 +1,14 @@
+from scipy.spatial.transform import Rotation as R
+
+# 假设我们有一个旋转矩阵
+rot_matrix = [[0, -1, 0],
+              [1,  0, 0],
+              [0,  0, 1]]
+
+# 创建一个Rotation对象
+r = R.from_matrix(rot_matrix)
+
+# 将旋转矩阵转换为欧拉角，使用 'zyx' 顺序
+euler_angles = r.as_euler('zyx', degrees=False)
+
+print(euler_angles)
